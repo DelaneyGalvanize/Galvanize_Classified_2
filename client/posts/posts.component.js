@@ -25,13 +25,14 @@
     function getAllPosts() {
       ClassifiedService
         .getAllPosts()
-        .then(success, fail)
+        .then(success, failure
+)
 
       function success(result) {
         vm.posts = result
       }
 
-      function fail() {
+      function failure() {
         console.log("oops! there was an error")
       }
     }
@@ -39,7 +40,8 @@
     vm.createPost = function(post) {
       ClassifiedService
         .create(post)
-        .then(success, fail)
+        .then(success, failure
+)
 
       function success(result) {
         vm.posts.push(result)
@@ -48,7 +50,7 @@
         vm.newPostForm.$setUntouched()
       }
 
-      function fail() {
+      function failure() {
         console.log("oops! there was an error")
       }
     }
@@ -56,13 +58,14 @@
     function updatePost(post) {
       ClassifiedService
         .update(post)
-        .then(success, fail)
+        .then(success, failure
+)
 
       function success(result) {
         $state.go('posts')
       }
 
-      function fail(err) {
+      function failure(err) {
         console.log(err)
       }
     }
@@ -71,13 +74,14 @@
     vm.deletePost= function(id) {
       ClassifiedService
         .remove(id)
-        .then(success, fail)
+        .then(success, failure
+)
 
       function success(result) {
         vm.posts.splice(vm.posts.indexOf(result), 1)
       }
 
-      function fail() {
+      function failure() {
         console.log("oops! there was an error")
       }
     }

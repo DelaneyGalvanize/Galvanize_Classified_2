@@ -37,13 +37,13 @@
     function updatePost(post) {
       ClassifiedService
         .update(post)
-        .then(success, fail)
+        .then(success, failure)
 
       function success(result) {
         $state.go('posts')
       }
 
-      function fail(err) {
+      function failure(err) {
         console.log(err)
       }
     }
