@@ -4,12 +4,14 @@
   "main": "server.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon server/server.js",
-    "test": "mocha"
+    "start": "node server/server.js",
+    "knex": "knex",
+    "heroku-postbuild": "knex migrate:rollback --knexfile server/knexfile.js; knex migrate:latest --knexfile server/knexfile.js; knex seed:run --knexfile server/knexfile.js;",
+    "nodemon": "node server/server.js"
   },
-  "keywords": [],
-  "author": "",
-  "description": "",
+  "engines": {
+    "node": "v7.10.0"
+  },
   "dependencies": {
     "angular": "^1.6.0",
     "angular-moment": "^1.0.1",
