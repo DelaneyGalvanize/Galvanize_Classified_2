@@ -1,7 +1,7 @@
 {
   "name": "galvanize-classified-ad",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "server/server.js",
   "license": "MIT",
   "scripts": {
     "start": "node server/server.js",
@@ -10,7 +10,7 @@
     "nodemon": "node server/server.js"
   },
   "engines": {
-    "node": "v7.10.0"
+    "node": "v7.9.0"
   },
   "dependencies": {
     "angular": "^1.6.0",
